@@ -33,7 +33,7 @@
               - "{{ id }}"
           register: result
         
-        when: optional_assume_role.value is defined
+      when: optional_assume_role.value is defined
     - name: start ec2 instance by its ID with default role
       block:
         - name: start ec2 instance by its ID
@@ -50,7 +50,7 @@
             instance_ids:
               - "{{ id }}"
           register: result
-        when: optional_assume_role.value is not defined
+      when: optional_assume_role.value is not defined
       
     - copy:
         content: "{{ result }}"
