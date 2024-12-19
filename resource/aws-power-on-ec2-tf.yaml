@@ -8,7 +8,7 @@
     - name: start ec2 instance by its ID with assumed role
       block:
         - name: Assume AWS role
-          amazon.aws.sts_assume_role:
+          sts_assume_role:
             role_arn: "{{ optional_assume_role.value }}"
             role_session_name: "torque-session"
           register: assumed_role
