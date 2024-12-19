@@ -14,9 +14,9 @@
           register: assumed_role
         - name: stop ec2 instance by its ID
           amazon.aws.ec2_instance:
-              aws_access_key: "{{ assumed_role.sts_creds.access_key }}"
-              aws_secret_key: "{{ assumed_role.sts_creds.secret_key }}"
-              aws_session_token: "{{ assumed_role.sts_creds.session_token }}"
+            aws_access_key: "{{ assumed_role.sts_creds.access_key }}"
+            aws_secret_key: "{{ assumed_role.sts_creds.secret_key }}"
+            aws_session_token: "{{ assumed_role.sts_creds.session_token }}"
             instance_ids:
               - "{{ id }}"
             region: "{{ (arn | split(':'))[3] }}"
@@ -38,9 +38,9 @@
       block:
         - name: stop ec2 instance by its ID
           amazon.aws.ec2_instance:
-              aws_access_key: "{{ assumed_role.sts_creds.access_key }}"
-              aws_secret_key: "{{ assumed_role.sts_creds.secret_key }}"
-              aws_session_token: "{{ assumed_role.sts_creds.session_token }}"
+            aws_access_key: "{{ assumed_role.sts_creds.access_key }}"
+            aws_secret_key: "{{ assumed_role.sts_creds.secret_key }}"
+            aws_session_token: "{{ assumed_role.sts_creds.session_token }}"
             instance_ids:
               - "{{ id }}"
             region: "{{ (arn | split(':'))[3] }}"
